@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TodoForm from './component/TodoForm';
 import TodoSidebar from "./component/TodoSidebar";
 import TodoList from './component/TodoList';
-import "./App.css";
+
 
 function App() {
   const [groups, setGroups] = useState(["All", "Complete", "Work", "School", "Personal"]);
@@ -60,21 +60,22 @@ function App() {
   };
 
   return (
-    <div className="container mx-auto max-w-[2560px] h-screen p-3 flex flex-col md:flex-row gap-3 bg-gray-50">
+    <div className="container bg-[#f7f7f7] mx-auto max-w-[2560px] h-screen p-3 flex flex-col md:flex-row gap-3 bg-gray-50">
 
       {/* Hamburger Button for mobile */}
       <div className="md:hidden flex justify-between items-center mb-3">
-        <h1 className="text-2xl font-bold">TaskScrum</h1>
+        <h1 className="text-2xl font-bold text-slate-800">TaskScrum</h1>
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
-          className="text-3xl font-bold focus:outline-none"
+          className="text-3xl text-slate-700 focus:outline-none"
         >
           ☰
         </button>
       </div>
 
       {/* Sidebar */}
-      <div className={`fixed top-0 left-0 z-50 h-full w-64 bg-gray-300 p-3 shadow-lg transition-transform transform
+      <div className={`fixed top-0 left-0 z-50 h-full w-64 bg-white p-5 shadow-xl border-r border-slate-200 
+  transition-transform transform rounded-2xl
         ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:relative md:w-[30%]`}>
         <TodoSidebar
           deleteGroup={deleteGroup}
@@ -94,9 +95,9 @@ function App() {
       )}
 
       {/* Main Content */}
-      <div className='w-full md:w-[70%] p-5 border border-gray-200 shadow-lg rounded-lg flex flex-col gap-10 bg-white ml-auto'>
+      <div className="w-full md:w-[72%] p-8 bg-white shadow-xl rounded-2xl border border-slate-100 flex flex-col gap-10 ml-auto">
         <div >
-          <h1 className='text-3xl font-bold '>Welcome To TaskScrum</h1>
+          <h1 className="text-3xl font-semibold text-slate-800">Welcome To TaskScrum</h1>
         </div>
 
         {/* Form for input and search */}

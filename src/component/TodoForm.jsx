@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 export default function TodoForm({ addTask, setSearchText }) {
+  
   const [task, setTask] = useState("");
-
   const handleAddTask = (e) => {
     e.preventDefault();
     if (task.trim() === "") return;
